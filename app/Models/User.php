@@ -19,6 +19,7 @@ class User extends Authenticatable implements FilamentUser, HasName
      * The attributes that are mass assignable.
      *
      *  Registered To APP SERVICE PROVIDER
+     *
      */
 
     /**

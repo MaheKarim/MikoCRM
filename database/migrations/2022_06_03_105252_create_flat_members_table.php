@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email');
             $table->unsignedBigInteger('nid_number');
             $table->text('permanent_address');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
