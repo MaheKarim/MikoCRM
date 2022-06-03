@@ -22,8 +22,6 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->softDeletes();
-
-            $table->foreignId('account_id')->index()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

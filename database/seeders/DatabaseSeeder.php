@@ -18,29 +18,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $account = Account::create(['name' => 'Acme Corporation']);
-
-        User::factory()->create([
-            'account_id' => $account->id,
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-            'email' => 'johndoe@example.com',
-            'password' => 'secret',
-        ]);
-
-        User::factory(5)->create(['account_id' => $account->id]);
-
-        $organizations = Member::factory(100)
-            ->create(['account_id' => $account->id]);
-
-        $organizations->each(fn(Member $organization) =>
-            $organization
-        );
-
-        Deposit::factory(100)
-            ->create(['account_id' => $account->id])
-            ->each(function ($contact) use ($organizations) {
-                $contact->update(['member_id' => $organizations->random()->id]);
-            });
+        //
     }
 }
